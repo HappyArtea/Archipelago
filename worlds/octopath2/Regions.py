@@ -409,7 +409,7 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
     RegionName.TropuhopuKO:                [
         LocationName.TropuHopuCaitPowder
     ],
-    RegionName.TropuhopuKOBoat:                [
+    RegionName.TropuhopuKOCanoe:                [
         LocationName.TropuHopuPrettyPearl,
         LocationName.TropuHopuSkullHelm
     ],
@@ -487,7 +487,7 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
         LocationName.WesternConningCreekCoastSlumberSage,
         LocationName.WesternConningCreekCoastEnergizingPomegranate
     ],
-    RegionName.HarborlandsBoat:                [
+    RegionName.HarborlandsCanoe:                [
         LocationName.WesternCanalbrineCoastHerbofSerenity,
         LocationName.WesternCanalbrineCoastTravelersBow,
         LocationName.LairoftheUsurperBottleofSleepingDust,
@@ -497,7 +497,7 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
         LocationName.LairoftheUsurper6500L,
         LocationName.LairoftheUsurperWeatheredTreasureShield,
         LocationName.LairoftheUsurperEmpoweringLycheeL,
-        LocationName.WesternConningCreekCoastUnerringBracelet # Unsure, need to check if that's the one in western that's boat-locked
+        LocationName.WesternConningCreekCoastUnerringBracelet # Unsure, need to check if that's the one in western that's Canoe-locked
     ],
     RegionName.HarborlandsKO:                [
         LocationName.NorthernConningCreekCoastMatchingTrident
@@ -514,7 +514,7 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
         LocationName.CanalbrinePathtotheWaterSourcePlumLeaf,
         LocationName.CanalbrinePathtotheWaterSourceGrapeLeaf
     ],
-    RegionName.CanalbrineBoat:                [
+    RegionName.CanalbrineCanoe:                [
         LocationName.CanalbrineResistantNut,
         LocationName.CanalbrinePathtotheWaterSourceGuardsHelm,
         LocationName.CanalbrinePathtotheWaterSourceHerbofHealing,
@@ -523,7 +523,7 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
         LocationName.CanalbrineWaterSourceOldArmor,
         LocationName.CanalbrineWaterSourceHerbofHealing
     ],
-    RegionName.CanalbrineBoatKO:                [
+    RegionName.CanalbrineCanoeKO:                [
         LocationName.CanalbrineWoodcuttersGreatAxe
     ],
     RegionName.CasttiCh1:                       [
@@ -724,7 +724,7 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
         LocationName.HouseWellowsManorHealingGrapeBunch,
         LocationName.HouseWellowsManorForbiddenAxe
     ],
-    RegionName.LeaflandsBoat:                [],
+    RegionName.LeaflandsCanoe:                [],
     RegionName.Spring:                [
         LocationName.StarfallSpringBottleofSleepingDust,
         LocationName.StarfallSpringShadowSoulstone,
@@ -744,8 +744,8 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
         LocationName.VeilofTreesSlipperyNut,
         LocationName.VeilofTreesOliveofLife
     ],
-    RegionName.CropdaleBoat:                [
-        LocationName.ForestPathFurArmor, # Not 100% sure it's the boat-locked one
+    RegionName.CropdaleCanoe:                [
+        LocationName.ForestPathFurArmor, # Not 100% sure it's the Canoe-locked one
         LocationName.AnimalTrailHerbofSerenity
     ],
     RegionName.AgneaCh1:                [
@@ -1054,13 +1054,13 @@ def connect_regions(self):
         RegionName.Totohaha:                {RegionName.Brightlands, RegionName.Canalbrine, RegionName.Wildlands2, RegionName.SunderingSea, 
                                              RegionName.BeastingVillage, RegionName.Tropuhopu, RegionName.TotohahaPass, RegionName.CavernOfWaves, RegionName.TravelersBag},
         RegionName.BeastingVillage:         {RegionName.Totohaha, RegionName.BeastingVillageKO, RegionName.OchetteCh3, RegionName.OchetteCh1, RegionName.OchetteClear},
-        RegionName.Tropuhopu:               {RegionName.TropuhopuKO, RegionName.TropuhopuKOBoat, RegionName.PartitioTropuhopu, RegionName.AgneaCh3},
+        RegionName.Tropuhopu:               {RegionName.TropuhopuKO, RegionName.TropuhopuKOCanoe, RegionName.PartitioTropuhopu, RegionName.AgneaCh3},
         RegionName.TotohahaPass:            {RegionName.NamelessVillage, RegionName.SinkingRuins},
         RegionName.NamelessVillage:         {RegionName.NamelessVillageKO, RegionName.TemenosCh4, RegionName.TemenosClear},
         RegionName.Harborlands:             {RegionName.Canalbrine, RegionName.Hinoeuma1, RegionName.Hinoeuma2, RegionName.SunMoonCave, 
-                                             RegionName.HarborlandsBoat, RegionName.HarborlandsKO, RegionName.ConningCreek, RegionName.TravelersBag},
+                                             RegionName.HarborlandsCanoe, RegionName.HarborlandsKO, RegionName.ConningCreek, RegionName.TravelersBag},
         RegionName.Canalbrine:              {RegionName.Harborlands, RegionName.Totohaha, RegionName.Brightlands, RegionName.SunderingSea, 
-                                             RegionName.CanalbrineBoat, RegionName.CanalbrineBoatKO, RegionName.TemenosCh2, RegionName.CasttiCh1},
+                                             RegionName.CanalbrineCanoe, RegionName.CanalbrineCanoeKO, RegionName.TemenosCh2, RegionName.CasttiCh1},
         RegionName.ConningCreek:            {RegionName.OsvaldCh3, RegionName.OchetteCh2Acta, RegionName.ThroneTemenosCh2},
         RegionName.RoqueIsland:             {RegionName.RoqueIslandKO, RegionName.PartitioCh4, RegionName.PartitioClear},
         RegionName.Hinoeuma1:               {RegionName.Harborlands, RegionName.Wildlands1, RegionName.Ryu, RegionName.TravelersBag},
@@ -1076,8 +1076,8 @@ def connect_regions(self):
         RegionName.Crackridge:              {RegionName.CrackridgeKO, RegionName.TemenosCh3Crackridge, RegionName.OchetteCh2Tera},
         RegionName.Gravell:                 {RegionName.OsvaldCh5, RegionName.OsvaldClear},
         RegionName.Leaflands:               {RegionName.Hinoeuma2, RegionName.Wildlands1, RegionName.Wildlands2, RegionName.Spring,
-                                             RegionName.Cropdale, RegionName.LeaflandsBoat, RegionName.Wellgrove, RegionName.Timberain, RegionName.TravelersBag},
-        RegionName.Cropdale:                {RegionName.Leaflands, RegionName.CropdaleBoat, RegionName.AgneaCh1, RegionName.OchetteCasttiCh1, RegionName.OchetteCasttiCh2},
+                                             RegionName.Cropdale, RegionName.LeaflandsCanoe, RegionName.Wellgrove, RegionName.Timberain, RegionName.TravelersBag},
+        RegionName.Cropdale:                {RegionName.Leaflands, RegionName.CropdaleCanoe, RegionName.AgneaCh1, RegionName.OchetteCasttiCh1, RegionName.OchetteCasttiCh2},
         RegionName.Wellgrove:               {RegionName.ThroneCh3Mother, RegionName.HikariCh3, RegionName.PartitioCh3, RegionName.ThroneCh2Mother},
         RegionName.Timberain:               {RegionName.TimberainKO, RegionName.CasttiCh4, RegionName.CasttiClear},
         RegionName.SunderingSea:            {RegionName.Brightlands, RegionName.Wildlands2, RegionName.Canalbrine, RegionName.Totohaha, RegionName.SeaBehindScourge, RegionName.SeaIslands, RegionName.SeaBehindShark, RegionName.TyranodrakesLair, RegionName.RoqueIsland, RegionName.Vide, RegionName.Galdera}

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from Options import Choice, Range, Toggle, ItemDict, PerGameCommonOptions, StartInventoryPool
+from Options import Choice, Range, Toggle, ItemDict, PerGameCommonOptions
 
 
 #class EXPScaling(Range):
@@ -17,10 +17,10 @@ from Options import Choice, Range, Toggle, ItemDict, PerGameCommonOptions, Start
 #    range_end = 8
 #    default = 8
 
-#class OpenMode(Toggle):
-#    """Makes the world more open by removing some virtual barriers between regions"""
-#    display_name = "Open World Mode"
-#    default = false
+class OpenMode(Toggle):
+    """Makes the world more open by removing some virtual barriers between regions"""
+    display_name = "Open World Mode"
+    default = False
 
 #class IncludeChests(Toggle):
 #    """Allows Archipelago items to be in any treasure chest"""
@@ -33,7 +33,7 @@ from Options import Choice, Range, Toggle, ItemDict, PerGameCommonOptions, Start
 #    default = 0
 
 #class IncludeSideQuests(Toggle):
-#    """Allows Archipelago items to be in side quests"""
+#    """Allows Archipelago items to be in side quests. 2 items is set for each quest"""
 #    display_name = "Include Side Quests"
 #    default = 0
 
@@ -70,8 +70,15 @@ class StartingCharacter(Choice):
     option_hikari = 8
     default = 2
 
+# To add in difficulty setting : town accesses
 class Difficulty(Choice):
-    """Sets up what is expected for later regions. Easy forces later regions to be later in logic, while hard may force you to go through hard regions early."""
+    """Sets up what is expected for checks requiring boss fights (or tied to chpaters). Easy forces many unlocks before having to defeat a high level boss, while hard may force you to go through hard bosses without a full party and with a more limited amount of checks available.
+    The rules for each difficulty levels are (format is diffiulty : lvl range - requirements, lvl range - requirements, etc) :
+        easy_logic : lvl1-19 - 4chars, 4regions, 4licenses ; lvl20-39 - 8chars, 6regions, 6licenses; lvl40+ - 8chars, 8regions, 12licenses
+        normal_logic : lvl1-19 - 2chars, 2regions, 2licenses ; lvl20-39 - 4chars, 4regions, 4licenses; lvl40+ - 4chars, 4regions, 4licenses
+        hard_logic : lvl1-19 - 1chars, 1regions, 0licenses ; lvl20-39 - 2chars, 2regions, 2licenses; lvl40+ - 4chars, 4regions, 4licenses
+        no logic : Did you expect something here?    
+    """
     display_name = "Difficulty"
     option_easy = 0
     option_normal = 1
@@ -104,7 +111,7 @@ class Difficulty(Choice):
 #    default = 0
 
 #class TierEquipment(Choice):
-#    """Puts tiers into equipment received from items and shops. There are more chance that early checks will have worse equipment and later checks better equipment"""
+#    """Puts tiers into equipment received from NPCs and shops. There are more chance that early checks will have worse equipment and later checks better equipment similar to vanilla behavior"""
 #    display_name = "TierEquipment"
 #    option_no_tiering = 0
 #    option_basic_tiering = 1
@@ -124,8 +131,8 @@ class Goal(Choice):
     display_name = "Goal"
     option_vide = 0
 #    option_main = 1
-#    option_main_with_vide = 3
-#    option_galdera = 4
+#    option_main_with_vide = 2
+#    option_galdera = 3
     default = 0
 #   monster_hunt?    
 
@@ -140,21 +147,21 @@ class Goal(Choice):
     
 #class RequiredStories(Range):
 #    """Win Condition
-#    Amount of chapters required to be able to access Vide. Dual stories also count as chapters, and Osvald Chapter 1 counts for two chapters.   
+#    Amount of stories required to be able to access Vide. Requires all chapters of that story to be completed.   
 #    """
 #    display_name = "Goal"
 #    range_start = 0
 #    range_end = 8
 #    default = 5
 
+
 # shamelessly stolen from the messenger
 @dataclass
 class Octopath2Options(PerGameCommonOptions):
-    start_inventory: StartInventoryPool
     Goal: Goal
 #    EXPScaling: EXPScaling
 #    Available_Chars: AvailableChars
-#    Open_Mode: OpenMode
+    OpenMode: OpenMode
 #    Include_Chests: IncludeChests
 #    IncludeMainQuests: IncludeMainQuests
 #    IncludeSideQuests: IncludeSideQuests

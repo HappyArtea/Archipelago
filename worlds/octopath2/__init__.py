@@ -9,7 +9,7 @@ from worlds.AutoWorld import World, WebWorld
 from .Items import *
 from .Locations import *
 from .Names import ItemName, LocationName, RegionName
-from .Options import Octopath2Options, StartingCharacter, LockedTime, RandomizeCanoe
+from .Options import Octopath2Options, StartingCharacter, LockedTime, RandomizeCanoe, OpenMode
 from .Regions import create_regions, connect_regions
 from .Rules import *
 #from .Logic import *
@@ -56,6 +56,7 @@ class Octopath2World(World):
     exclude: List[str]
     starting_character: str
     starting_time: str
+    non_fillers: int
 
     def __init__(self, multiworld: "MultiWorld", player: int):
         super().__init__(multiworld, player)
@@ -100,12 +101,16 @@ class Octopath2World(World):
                 data_classification = ItemClassification.filler
             item = OT2Item(item_name, data_classification, self.item_name_to_id[item_name], self.player)
             self.multiworld.get_location(location_name, self.player).place_locked_item(item)
+            self.non_fillers = self.non_fillers+1
+
+#    def __increment_fillers(self, non_fillers: int) -> int:
+#        return non_fillers+1
 
     def create_items(self) -> None:
         """Create every item in the world"""
         precollected = [item.name for item in self.multiworld.precollected_items[self.player]]
-        
-        
+        self.non_fillers = 0
+        itempool = []
         
         # That's horrible code but it'll have to do for now
         # Need to handle a add_location on game start for the starter char unlock, and then
@@ -132,7 +137,7 @@ class Octopath2World(World):
         elif self.options.StartingCharacter == StartingCharacter.option_partitio:
             self.__pre_fill_item("Partitio Unlock", "Game Start Character", precollected)
             self.__pre_fill_item("Partitio Chapter1 Unlock", "Game Start Chapter", precollected)
-            self.__pre_fill_item("WildlandsUnlock", "Game Start Region", precollected)
+            self.__pre_fill_item("Wildlands Region Unlock", "Game Start Region", precollected)
             self.starting_character = "Partitio"
         elif self.options.StartingCharacter == StartingCharacter.option_agnea:
             self.__pre_fill_item("Agnea Unlock", "Game Start Character", precollected)
@@ -150,21 +155,18 @@ class Octopath2World(World):
             self.__pre_fill_item("Hinoeuma Region Unlock", "Game Start Region", precollected)
             self.starting_character = "Hikari"
         
-        non_fillers=0
-        
         for name, data in item_table.items():
             if name not in self.exclude:
                 for i in range(data.quantity):
                     item = self.create_item(name)
                     self.multiworld.itempool.append(item)
-                    non_fillers = non_fillers+1
-                    
-        itempool = []
-                    
+                    self.non_fillers = self.non_fillers+1
+        
+        
         # Creating fillers for unfilled locations
-        size = len(all_chests) - non_fillers-3
+        size = len(all_chests) - self.non_fillers
         for i in range(size):
-            filler = self.random.choice(list(filler_items)) 
+            filler = self.random.choice(list(filler_items_table)) 
             itempool += [self.create_item(filler)]
 
         self.multiworld.itempool += itempool
@@ -179,12 +181,18 @@ class Octopath2World(World):
         Determines the quantity of items and maps plando locations to items.
         """
         
+        if self.options.OpenMode == True:
+          for item in Region_Unlocks_Table :
+            self.exclude.append(item)
+            self.multiworld.push_precollected(self.create_item(item))
+
+          
         if self.options.LockedTime == False:
           self.exclude.append(ItemName.TimeChange)
           self.multiworld.push_precollected(self.create_item(ItemName.TimeChange))
         if self.options.RandomizeCanoe == False:
-          self.exclude.append(ItemName.Boat)
-          self.multiworld.push_precollected(self.create_item(ItemName.Boat))
+          self.exclude.append(ItemName.Canoe)
+          self.multiworld.push_precollected(self.create_item(ItemName.Canoe))
             
         #pass
 

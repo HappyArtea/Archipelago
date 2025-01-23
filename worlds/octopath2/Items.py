@@ -6,11 +6,12 @@ from enum import Enum
 
 class ItemType(Enum):
     """
-    Used to indicate to the multi-world if an item is useful or not
+    Used to indicate to the multi-world if an item is useful or not. Unobtainable means the item has no use and shouldn't be put in even as fillers.
     """
     useful = 0
     progression = 1
     filler = 2
+    unobtainable = 3
 
 class OT2Item(Item):
     game: str = "Octopath Traveler 2"
@@ -100,7 +101,7 @@ Consumables_Table = {
     ItemName.TreeNut:                               ItemData(0,ItemType.filler),
     ItemName.ForbiddenElixir:                       ItemData(0,ItemType.filler),
     ItemName.RedApple:                              ItemData(0,ItemType.filler),
-    ItemName.STuFfeDToY:                            ItemData(0,ItemType.filler),  # Not sure why this goes here. Gotta check later.
+    ItemName.STuFfeDToY:                            ItemData(0,ItemType.unobtainable),  # Not sure why this goes here. Gotta check later.
     ItemName.HandmadeRiceBall:                      ItemData(0,ItemType.filler),
     ItemName.Raspberry:                             ItemData(0,ItemType.filler),
     ItemName.WheatBread:                            ItemData(0,ItemType.filler),
@@ -142,7 +143,7 @@ Sellables_Table = {
     ItemName.SmallSilverOre:                        ItemData(0,ItemType.filler),
     ItemName.ThickTome:                             ItemData(0,ItemType.filler),
     ItemName.AntiqueCoin:                           ItemData(0,ItemType.filler),
-    ItemName.AntiqueCoin_11088:                     ItemData(0,ItemType.filler),  # how is this different from AntiqueCoin?
+    ItemName.AntiqueCoin_11088:                     ItemData(0,ItemType.unobtainable),  # how is this different from AntiqueCoin?
     ItemName.LumpofSilver:                          ItemData(0,ItemType.filler),
     ItemName.HeavyBook:                             ItemData(0,ItemType.filler),
     ItemName.HeavyCoinPouch:                        ItemData(0,ItemType.filler),
@@ -175,34 +176,34 @@ Soothe_Herbs_Table = {
 
 Nuts_Table = {
     # Separated Nuts from other consumables as they can't be used in battle.
-    ItemName.NourishingNut:                         ItemData(1,ItemType.useful),
+    ItemName.NourishingNut:                         ItemData(1,ItemType.filler),
     ItemName.NourishingNutM:                        ItemData(1,ItemType.useful),
     ItemName.NourishingNutL:                        ItemData(1,ItemType.useful),
-    ItemName.InvigoratingNut:                       ItemData(1,ItemType.useful),
+    ItemName.InvigoratingNut:                       ItemData(1,ItemType.filler),
     ItemName.InvigoratingNutM:                      ItemData(1,ItemType.useful),
     ItemName.InvigoratingNutL:                      ItemData(1,ItemType.useful),
-    ItemName.FortifyingNut:                         ItemData(1,ItemType.useful),
+    ItemName.FortifyingNut:                         ItemData(1,ItemType.filler),
     ItemName.FortifyingNutM:                        ItemData(1,ItemType.useful),
     ItemName.FortifyingNutL:                        ItemData(1,ItemType.useful),
-    ItemName.ToughNut:                              ItemData(1,ItemType.useful),
+    ItemName.ToughNut:                              ItemData(1,ItemType.filler),
     ItemName.ToughNutM:                             ItemData(1,ItemType.useful),
     ItemName.ToughNutL:                             ItemData(1,ItemType.useful),
-    ItemName.MagicNut:                              ItemData(1,ItemType.useful),
+    ItemName.MagicNut:                              ItemData(1,ItemType.filler),
     ItemName.MagicNutM:                             ItemData(1,ItemType.useful),
     ItemName.MagicNutL:                             ItemData(1,ItemType.useful),
-    ItemName.ResistantNut:                          ItemData(1,ItemType.useful),
+    ItemName.ResistantNut:                          ItemData(1,ItemType.filler),
     ItemName.ResistantNutM:                         ItemData(1,ItemType.useful),
     ItemName.ResistantNutL:                         ItemData(1,ItemType.useful),
-    ItemName.SharpNut:                              ItemData(1,ItemType.useful),
+    ItemName.SharpNut:                              ItemData(1,ItemType.filler),
     ItemName.SharpNutM:                             ItemData(1,ItemType.useful),
     ItemName.SharpNutL:                             ItemData(1,ItemType.useful),
-    ItemName.SlipperyNut:                           ItemData(1,ItemType.useful),
+    ItemName.SlipperyNut:                           ItemData(1,ItemType.filler),
     ItemName.SlipperyNutM:                          ItemData(1,ItemType.useful),
     ItemName.SlipperyNutL:                          ItemData(1,ItemType.useful),
-    ItemName.CriticalNut:                           ItemData(1,ItemType.useful),
+    ItemName.CriticalNut:                           ItemData(1,ItemType.filler),
     ItemName.CriticalNutM:                          ItemData(1,ItemType.useful),
     ItemName.CriticalNutL:                          ItemData(1,ItemType.useful),
-    ItemName.LightNut:                              ItemData(1,ItemType.useful),
+    ItemName.LightNut:                              ItemData(1,ItemType.filler),
     ItemName.LightNutM:                             ItemData(1,ItemType.useful),
     ItemName.LightNutL:                             ItemData(1,ItemType.useful)
 }
@@ -260,7 +261,7 @@ Weapons_Table = {
     ItemName.SwordoftheSands:                       ItemData(0,ItemType.filler),
     ItemName.DesertBlade:                           ItemData(0,ItemType.filler),
     ItemName.ThiefsSword:                           ItemData(0,ItemType.filler),
-    ItemName.MakeshiftSword:                        ItemData(0,ItemType.filler),
+    ItemName.MakeshiftSword:                        ItemData(0,ItemType.unobtainable),
 
     # Spears
     ItemName.WarlordsSpear:                         ItemData(1,ItemType.useful),
@@ -307,7 +308,7 @@ Weapons_Table = {
     ItemName.DesertSpear:                           ItemData(0,ItemType.filler),
     ItemName.DistinguishedLance:                    ItemData(0,ItemType.filler),
     ItemName.HandmadeSpear:                         ItemData(0,ItemType.filler),
-    ItemName.MakeshiftSpear:                        ItemData(0,ItemType.filler),
+    ItemName.MakeshiftSpear:                        ItemData(0,ItemType.unobtainable),
 
     # Daggers
     ItemName.DancersBlade:                          ItemData(1,ItemType.useful),
@@ -357,7 +358,7 @@ Weapons_Table = {
     ItemName.FruitKnife:                            ItemData(0,ItemType.filler),
     ItemName.SharpStone:                            ItemData(0,ItemType.filler),
     ItemName.SharpStone_10059:                      ItemData(0,ItemType.filler),
-    ItemName.MakeshiftKnife:                        ItemData(0,ItemType.filler),
+    ItemName.MakeshiftKnife:                        ItemData(0,ItemType.unobtainable),
 
     # Axes
     ItemName.LionheartsAxe:                         ItemData(1,ItemType.useful),
@@ -404,7 +405,7 @@ Weapons_Table = {
     ItemName.DemolitionAxe:                         ItemData(0,ItemType.filler),
     ItemName.SmallAxe:                              ItemData(0,ItemType.filler),
     ItemName.SnakeFang:                             ItemData(0,ItemType.filler),
-    ItemName.MakeshiftAxe:                          ItemData(0,ItemType.filler),
+    ItemName.MakeshiftAxe:                          ItemData(0,ItemType.unobtainable),
 
     # Bows
     ItemName.HuntersBow:                            ItemData(1,ItemType.useful),
@@ -449,7 +450,7 @@ Weapons_Table = {
     ItemName.Shortbow:                              ItemData(0,ItemType.filler),
     ItemName.Bow:                                   ItemData(0,ItemType.filler),
     ItemName.HandmadeBow:                           ItemData(0,ItemType.filler),
-    ItemName.MakeshiftBow:                          ItemData(0,ItemType.filler),
+    ItemName.MakeshiftBow:                          ItemData(0,ItemType.unobtainable),
 
     # Staves
     ItemName.SpiritlordsStaff:                      ItemData(1,ItemType.useful),
@@ -496,7 +497,7 @@ Weapons_Table = {
     ItemName.GiantsClub:                            ItemData(1,ItemType.useful),
     ItemName.MorningStar:                           ItemData(0,ItemType.filler),
     ItemName.Flail:                                 ItemData(0,ItemType.filler),
-    ItemName.MakeshiftStaff:                        ItemData(0,ItemType.filler),
+    ItemName.MakeshiftStaff:                        ItemData(0,ItemType.unobtainable),
 }
 
 Shields_Table = {
@@ -539,7 +540,7 @@ Shields_Table = {
     ItemName.SmallShield:                           ItemData(0,ItemType.filler),
     ItemName.WoodenShield:                          ItemData(0,ItemType.filler),
     ItemName.BodyguardsVantage:                     ItemData(1,ItemType.useful),
-    ItemName.MakeshiftShield:                       ItemData(0,ItemType.filler),
+    ItemName.MakeshiftShield:                       ItemData(0,ItemType.unobtainable),
 }
 
 Helms_Table = {
@@ -762,27 +763,27 @@ Accessories_Table = {
 
 Journals_Table = {
     # Separated these from story items since they are optional lore content
-    ItemName.TanzysJournal:                         ItemData(0,ItemType.useful),
-    ItemName.OborosJournal:                         ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentI:                      ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentII:                     ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentIII:                    ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentIV:                     ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentV:                      ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentVI:                     ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentVII:                    ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentVIII:                   ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentIX:                     ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentX:                      ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentXI:                     ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentXII:                    ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentXIII:                   ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentXIV:                    ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentXV:                     ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentXVI:                    ItemData(0,ItemType.useful),
-    ItemName.JournalFragmentXVII:                   ItemData(0,ItemType.useful),
-    ItemName.DancersJournal:                        ItemData(0,ItemType.useful),
-    ItemName.WornJournal:                           ItemData(0,ItemType.useful),
+    ItemName.TanzysJournal:                         ItemData(0,ItemType.unobtainable),
+    ItemName.OborosJournal:                         ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentI:                      ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentII:                     ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentIII:                    ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentIV:                     ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentV:                      ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentVI:                     ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentVII:                    ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentVIII:                   ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentIX:                     ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentX:                      ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentXI:                     ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentXII:                    ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentXIII:                   ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentXIV:                    ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentXV:                     ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentXVI:                    ItemData(0,ItemType.unobtainable),
+    ItemName.JournalFragmentXVII:                   ItemData(0,ItemType.unobtainable),
+    ItemName.DancersJournal:                        ItemData(0,ItemType.unobtainable),
+    ItemName.WornJournal:                           ItemData(0,ItemType.unobtainable),
 }
 
 Main_Story_Items_Table = {
@@ -983,7 +984,7 @@ Concoct_Ingredients_Table = {
     ItemName.WardingLeaf:                           ItemData(0,ItemType.filler),
     ItemName.WhimsicalLeaf:                         ItemData(0,ItemType.filler),
     ItemName.DualLeaf:                              ItemData(0,ItemType.filler),
-    ItemName.Weeds:                                 ItemData(0,ItemType.filler),
+    ItemName.Weeds:                                 ItemData(0,ItemType.unobtainable),
     ItemName.Blusterbloom:                          ItemData(0,ItemType.filler),
     ItemName.LilyoftheLight:                        ItemData(0,ItemType.filler),
     ItemName.Darkdelion:                            ItemData(0,ItemType.filler),
@@ -993,7 +994,7 @@ Concoct_Ingredients_Table = {
     ItemName.DreamyFlower:                          ItemData(0,ItemType.filler),
     ItemName.EnfeeblingFlower:                      ItemData(0,ItemType.filler),
     ItemName.DualFlower:                            ItemData(0,ItemType.filler),
-    ItemName.Weeds_10588:                           ItemData(0,ItemType.filler),  # Basic Weeds option in Concoct menu?
+    ItemName.Weeds_10588:                           ItemData(0,ItemType.unobtainable),  # Basic Weeds option in Concoct menu?
     ItemName.DiffusingSerum:                        ItemData(1,ItemType.useful),
     ItemName.StrengtheningSerum:                    ItemData(1,ItemType.useful)
 }
@@ -1601,7 +1602,7 @@ Story_Chapter_Unlocks_Table = {
 
 # Do those need a section really? Dunno where to put them
 Other_Items_Table = {
-    ItemName.Boat:                                  ItemData(1,ItemType.progression),  # Does this refer to Ferries? No, it's the little boat that lets you move in rivers.
+    ItemName.Canoe:                                  ItemData(1,ItemType.progression),  # Does this refer to Ferries? No, it's the little Canoe that lets you move in rivers.
     ItemName.TimeChange:                            ItemData(1,ItemType.progression),
     ItemName.TheGrandTerry:                         ItemData(1,ItemType.progression),
 }
@@ -1699,3 +1700,11 @@ item_table = {
 filler_items = {
     **Consumables_Table,
 }
+
+filler_items_table = {}
+
+for name, data in item_table.items():
+    if data.type == ItemType.filler:
+        filler_items_table.update({name: data})
+
+
