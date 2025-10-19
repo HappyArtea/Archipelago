@@ -92,7 +92,7 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
         LocationName.InfernalCastleInspiritingPlumBasket,
         LocationName.InfernalCastleBlizzardAmulet,
         LocationName.InfernalCastleLostTribesStaff,
-        LocationName.InfernalCastleEnergizingPomegranate,
+        LocationName.InfernalCastleEnergizingPomegranateM,
         LocationName.InfernalCastleSerpentSlayer,
         LocationName.InfernalCastleStoneofTruth
     ],
@@ -142,7 +142,7 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
         LocationName.BorderfallEmpoweringLychee,
         LocationName.WesternMontwisePassGelidHelm,
         LocationName.WesternMontwisePass800L,
-        LocationName.WesternMontwisePassEnergizingPomegranate,
+        LocationName.WesternMontwisePassEnergizingPomegranateM,
         LocationName.WesternMerryHillsPassHealingGrapeM,
         LocationName.WesternMerryHillsPassSunShield,
         LocationName.WesternMerryHillsPassHerbofAwakening,
@@ -234,7 +234,7 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
     RegionName.AgneaCh5:                [
         LocationName.ShrineofUlSterraRefreshingJam,
         LocationName.ShrineofUlSterraElementalAugmentor,
-        LocationName.ShrineofUlSterraResplendantCostume,
+        LocationName.ShrineofUlSterraResplendentCostume,
         LocationName.ShrineofUlSterraBloodstainedKnife,
         LocationName.StageoftheMoonandSun24000L,
         LocationName.AgneaCh5Clear
@@ -327,7 +327,7 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
     ],
     RegionName.PartitioCh2:                [
         LocationName.ClockbankIndustrialDistrictSlashingGlaive,
-        LocationName.TheRoqueCompanyFactoryEmpoweringLychee,
+        LocationName.TheRoqueCompanyFactoryEmpoweringLycheeM,
         LocationName.TheRoqueCompanyFactory7000L,
         LocationName.TheRoqueCompanyFactoryProsperityCharm,
         LocationName.PartitioCh2Clear
@@ -339,7 +339,7 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
     RegionName.LostseedPass:                [
         LocationName.DesertedHighroadDragonMail,
         LocationName.DesertedHighroadSlumberSage,
-        LocationName.DesertedHighroadEnergizingPomegranate,
+        LocationName.DesertedHighroadEnergizingPomegranateM,
         LocationName.DesertedHighroadOliveofLifeL
     ],
     RegionName.Lostseed:                [
@@ -377,9 +377,9 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
         LocationName.PathtotheTombsoftheWardenbeastsUnerringRing,
         LocationName.PathtotheTombsoftheWardenbeastsInspiritingPlum,
         LocationName.PathtotheTombsoftheWardenbeastsJerky,
-        LocationName.TombsoftheWardenbestsCompositeBow,
-        LocationName.TombsoftheWardenbestsBone,
-        LocationName.TombsoftheWardenbestsSharpNut
+        LocationName.TombsoftheWardenbeastsCompositeBow,
+        LocationName.TombsoftheWardenbeastsBone,
+        LocationName.TombsoftheWardenbeastsSharpNut
     ],
     RegionName.BeastingVillageKO:                [
         LocationName.BeastingVillageGiantBow,
@@ -492,7 +492,7 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
         LocationName.WesternCanalbrineCoastTravelersBow,
         LocationName.LairoftheUsurperBottleofSleepingDust,
         LocationName.LairoftheUsurperThunderMace,
-        LocationName.LairoftheUsurperOliveofLifeL,
+        LocationName.LairoftheUsurperOliveofLifeM,
         LocationName.LairoftheUsurperGrailofLife,
         LocationName.LairoftheUsurper6500L,
         LocationName.LairoftheUsurperWeatheredTreasureShield,
@@ -838,12 +838,12 @@ OT2REGIONS: typing.Dict[str, typing.List[str]] = {
         LocationName.SouthernCrackridgeWildsHerbofClamor,
         LocationName.SouthernCrackridgeWilds6400L,
         LocationName.SouthernCrackridgeWildsShadowSoulstoneM,
-        LocationName.WesternCrackrideWildsHeadgear,
-        LocationName.WesternCrackrideWildsBoneMail,
-        LocationName.WesternCrackrideWilds8500L,
-        LocationName.WesternCrackrideWildsThunderSoulstoneM,
-        LocationName.WesternCrackrideWildsInspiritingPlumBasket,
-        LocationName.WesternCrackrideWildsOliveofLife,
+        LocationName.WesternCrackridgeWildsHeadgear,
+        LocationName.WesternCrackridgeWildsBoneMail,
+        LocationName.WesternCrackridgeWilds8500L,
+        LocationName.WesternCrackridgeWildsThunderSoulstoneM,
+        LocationName.WesternCrackridgeWildsInspiritingPlumBasket,
+        LocationName.WesternCrackridgeWildsOliveofLife,
         LocationName.WesternGravellWildsEnergizingPomegranateL,
         LocationName.WesternGravellWildsBottleofBlindingDust,
         LocationName.WesternGravellWildsThunderSoulstoneL,

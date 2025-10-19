@@ -21,9 +21,9 @@ Totohaha_Checks={
     LocationName.PathtotheTombsoftheWardenbeastsUnerringRing:       LocationData("Path to the Tombs of the Wardenbeasts"),
     LocationName.PathtotheTombsoftheWardenbeastsInspiritingPlum:    LocationData("Path to the Tombs of the Wardenbeasts"),
     LocationName.PathtotheTombsoftheWardenbeastsJerky:              LocationData("Path to the Tombs of the Wardenbeasts"),
-    LocationName.TombsoftheWardenbestsCompositeBow:                 LocationData("Tombs of the Wardenbests"),
-    LocationName.TombsoftheWardenbestsBone:                         LocationData("Tombs of the Wardenbests"),
-    LocationName.TombsoftheWardenbestsSharpNut:                     LocationData("Tombs of the Wardenbests"),
+    LocationName.TombsoftheWardenbeastsCompositeBow:                LocationData("Tombs of the Wardenbests"),
+    LocationName.TombsoftheWardenbeastsBone:                        LocationData("Tombs of the Wardenbests"),
+    LocationName.TombsoftheWardenbeastsSharpNut:                    LocationData("Tombs of the Wardenbests"),
     LocationName.NorthBeastingTraverseInspiritingPlumM:             LocationData("North Beasting Traverse"),
     LocationName.NorthBeastingTraverseEmpoweringLychee:             LocationData("North Beasting Traverse"),
     LocationName.NorthBeastingTraverseWindSoulstone:                LocationData("North Beasting Traverse"),
@@ -137,7 +137,7 @@ Harborlands_Checks={
     LocationName.GuardOutpost7200L:                                 LocationData("Guard Outpost"),
     LocationName.LairoftheUsurperBottleofSleepingDust:              LocationData("Lair of the Usurper"),
     LocationName.LairoftheUsurperThunderMace:                       LocationData("Lair of the Usurper"),
-    LocationName.LairoftheUsurperOliveofLifeL:                      LocationData("Lair of the Usurper"),
+    LocationName.LairoftheUsurperOliveofLifeM:                      LocationData("Lair of the Usurper"),
     LocationName.LairoftheUsurperGrailofLife:                       LocationData("Lair of the Usurper"),
     LocationName.LairoftheUsurper6500L:                             LocationData("Lair of the Usurper"),
     LocationName.LairoftheUsurperWeatheredTreasureShield:           LocationData("Lair of the Usurper"),
@@ -190,27 +190,27 @@ Brightlands_Checks={
     LocationName.WesternClockbankHighroadInspiritingPlumBasket:     LocationData("Western Clockbank Highroad"),
     LocationName.WesternClockbankHighroadFeatheredHat:              LocationData("Western Clockbank Highroad"),
     LocationName.WesternClockbankHighroadHerbofClarity:             LocationData("Western Clockbank Highroad"),
-    LocationName.SouthernClockbankHighroadLightSoulstoneM:          LocationData("Southern Clockbank Highroad"),
-    LocationName.SouthernClockbankHighroadEnergizingPomegranateM:   LocationData("Southern Clockbank Highroad"),
-    LocationName.SouthernClockbankHighroad6300L:                    LocationData("Southern Clockbank Highroad"),
-    LocationName.SouthernClockbankHighroadMirageBow:                LocationData("Southern Clockbank Highroad"),
-    LocationName.ClockbankBottleofSleepingDust:                     LocationData("Clockbank"),
-    LocationName.ClockbankPointedHat:                               LocationData("Clockbank"),
-    LocationName.ClockbankInspiritingPlumM:                         LocationData("Clockbank"),
-    LocationName.ClockbankCrestedGreatshield:                       LocationData("Clockbank"),
-    LocationName.ClockbankIndustrialDistrictHealingGrapeBunch:      LocationData("Clockbank: Industrial District"),
-    LocationName.ClockbankIndustrialDistrictSlashingGlaive:         LocationData("Clockbank: Industrial District"),
-    LocationName.TheRoqueCompanyFactoryEmpoweringLychee:            LocationData("The Roque Company: Factory"),
-    LocationName.TheRoqueCompanyFactory7000L:                       LocationData("The Roque Company: Factory"),
-    LocationName.TheRoqueCompanyFactoryProsperityCharm:             LocationData("The Roque Company: Factory"),
-    LocationName.UndergroundWaterwayProtectiveRing:                 LocationData("Underground Waterway"),
-    LocationName.UndergroundWaterwayHealingGrape:                   LocationData("Underground Waterway"),
-    LocationName.DiamantesEstate1200L:                              LocationData("Diamantes Estate"),
-    LocationName.DiamantesEstateShadowSoulstone:                    LocationData("Diamantes Estate"),
-    LocationName.DiamantesEstateLongSword:                          LocationData("Diamantes Estate"),
-    LocationName.DiamantesEstateInspiritingPlum:                    LocationData("Diamantes Estate"),
-    LocationName.TheaterBackstageRefreshingJam:                     LocationData("Theater: Backstage"),
-    LocationName.TheaterBackstageLightningAmulet:                   LocationData("Theater: Backstage"),
+    LocationName.SouthernClockbankHighroadLightSoulstoneM:        LocationData("Southern Clockbank Highroad"),
+    LocationName.SouthernClockbankHighroadEnergizingPomegranateM: LocationData("Southern Clockbank Highroad"),
+    LocationName.SouthernClockbankHighroad6300L:                  LocationData("Southern Clockbank Highroad"),
+    LocationName.SouthernClockbankHighroadMirageBow:              LocationData("Southern Clockbank Highroad"),
+    LocationName.ClockbankBottleofSleepingDust:                   LocationData("Clockbank"),
+    LocationName.ClockbankPointedHat:                             LocationData("Clockbank"),
+    LocationName.ClockbankInspiritingPlumM:                       LocationData("Clockbank"),
+    LocationName.ClockbankCrestedGreatshield:                     LocationData("Clockbank"),
+    LocationName.ClockbankIndustrialDistrictHealingGrapeBunch:    LocationData("Clockbank: Industrial District"),
+    LocationName.ClockbankIndustrialDistrictSlashingGlaive:       LocationData("Clockbank: Industrial District"),
+    LocationName.TheRoqueCompanyFactoryEmpoweringLycheeM:         LocationData("The Roque Company: Factory"),
+    LocationName.TheRoqueCompanyFactory7000L:                     LocationData("The Roque Company: Factory"),
+    LocationName.TheRoqueCompanyFactoryProsperityCharm:           LocationData("The Roque Company: Factory"),
+    LocationName.UndergroundWaterwayProtectiveRing:               LocationData("Underground Waterway"),
+    LocationName.UndergroundWaterwayHealingGrape:                 LocationData("Underground Waterway"),
+    LocationName.DiamantesEstate1200L:                            LocationData("Diamantes Estate"),
+    LocationName.DiamantesEstateShadowSoulstone:                  LocationData("Diamantes Estate"),
+    LocationName.DiamantesEstateLongSword:                        LocationData("Diamantes Estate"),
+    LocationName.DiamantesEstateInspiritingPlum:                  LocationData("Diamantes Estate"),
+    LocationName.TheaterBackstageRefreshingJam:                   LocationData("Theater: Backstage"),
+    LocationName.TheaterBackstageLightningAmulet:                 LocationData("Theater: Backstage"),
     LocationName.TheaterBackstageSimpleCostume:                     LocationData("Theater: Backstage"),
     LocationName.TheaterBackstageFalconKnife:                       LocationData("Theater: Backstage"),
     LocationName.TheaterBackstageHealingGrapeM:                     LocationData("Theater: Backstage"),
@@ -235,7 +235,7 @@ Brightlands_Checks={
     LocationName.OldClockTowerSeraphimSpear:                        LocationData("Old Clock Tower"),
     LocationName.DesertedHighroadDragonMail:                        LocationData("Deserted Highroad"),
     LocationName.DesertedHighroadSlumberSage:                       LocationData("Deserted Highroad"),
-    LocationName.DesertedHighroadEnergizingPomegranate:             LocationData("Deserted Highroad"),
+    LocationName.DesertedHighroadEnergizingPomegranateM:             LocationData("Deserted Highroad"),
     LocationName.DesertedHighroadOliveofLifeL:                      LocationData("Deserted Highroad"),
     LocationName.LostseedCursedHelm:                                LocationData("Lostseed"),
     LocationName.LostseedReinforcingJam:                            LocationData("Lostseed"),
@@ -276,7 +276,7 @@ Winterlands_Checks={
     LocationName.InfernalCastleInspiritingPlumBasket:                       LocationData("Infernal Castle"),
     LocationName.InfernalCastleBlizzardAmulet:                              LocationData("Infernal Castle"),
     LocationName.InfernalCastleLostTribesStaff:                             LocationData("Infernal Castle"),
-    LocationName.InfernalCastleEnergizingPomegranate:                       LocationData("Infernal Castle"),
+    LocationName.InfernalCastleEnergizingPomegranateM:                      LocationData("Infernal Castle"),
     LocationName.InfernalCastleSerpentSlayer:                               LocationData("Infernal Castle"),
     LocationName.InfernalCastleStoneofTruth:                                LocationData("Infernal Castle"),
     LocationName.RuffiansHideoutBottleofBlindingDust:                       LocationData("Ruffians Hideout"),
@@ -352,12 +352,12 @@ Wildlands_Checks={
     LocationName.SouthernCrackridgeWildsHerbofClamor:               LocationData("Southern Crackridge Wilds"),
     LocationName.SouthernCrackridgeWilds6400L:                      LocationData("Southern Crackridge Wilds"),
     LocationName.SouthernCrackridgeWildsShadowSoulstoneM:           LocationData("Southern Crackridge Wilds"),
-    LocationName.WesternCrackrideWildsHeadgear:                     LocationData("Western Crackride Wilds"),
-    LocationName.WesternCrackrideWildsBoneMail:                     LocationData("Western Crackride Wilds"),
-    LocationName.WesternCrackrideWilds8500L:                        LocationData("Western Crackride Wilds"),
-    LocationName.WesternCrackrideWildsThunderSoulstoneM:            LocationData("Western Crackride Wilds"),
-    LocationName.WesternCrackrideWildsInspiritingPlumBasket:        LocationData("Western Crackride Wilds"),
-    LocationName.WesternCrackrideWildsOliveofLife:                  LocationData("Western Crackride Wilds"),
+    LocationName.WesternCrackridgeWildsHeadgear:                     LocationData("Western Crackridge Wilds"),
+    LocationName.WesternCrackridgeWildsBoneMail:                     LocationData("Western Crackridge Wilds"),
+    LocationName.WesternCrackridgeWilds8500L:                        LocationData("Western Crackridge Wilds"),
+    LocationName.WesternCrackridgeWildsThunderSoulstoneM:            LocationData("Western Crackridge Wilds"),
+    LocationName.WesternCrackridgeWildsInspiritingPlumBasket:        LocationData("Western Crackridge Wilds"),
+    LocationName.WesternCrackridgeWildsOliveofLife:                  LocationData("Western Crackridge Wilds"),
     LocationName.CrackridgeOliveofLifeM:                            LocationData("Crackridge"),
     LocationName.CrackridgeFromtheFarReachesofHell:                 LocationData("Crackridge"),
     LocationName.AbandonedRoadHealingGrapeM:                        LocationData("Abandoned Road"),
@@ -503,7 +503,7 @@ Crestlands_Checks={
     LocationName.BorderfallEmpoweringLychee:                        LocationData("Borderfall"),
     LocationName.WesternMontwisePassGelidHelm:                      LocationData("Western Montwise Pass"),
     LocationName.WesternMontwisePass800L:                           LocationData("Western Montwise Pass"),
-    LocationName.WesternMontwisePassEnergizingPomegranate:          LocationData("Western Montwise Pass"),
+    LocationName.WesternMontwisePassEnergizingPomegranateM:         LocationData("Western Montwise Pass"),
     LocationName.MontwiseEngagementBow:                             LocationData("Montwise"),
     LocationName.MontwiseFeatherMantle:                             LocationData("Montwise"),
     LocationName.MontwiseLibraryLapisRod:                           LocationData("Montwise: Library"),
@@ -550,7 +550,7 @@ Crestlands_Checks={
     LocationName.MerryHillsShrineEntranceEmpoweringNecklace:        LocationData("Merry Hills: Shrine Entrance"),
     LocationName.ShrineofUlSterraRefreshingJam:                     LocationData("Shrine of UlSterra"),
     LocationName.ShrineofUlSterraElementalAugmentor:                LocationData("Shrine of UlSterra"),
-    LocationName.ShrineofUlSterraResplendantCostume:                LocationData("Shrine of UlSterra"),
+    LocationName.ShrineofUlSterraResplendentCostume:                LocationData("Shrine of UlSterra"),
     LocationName.ShrineofUlSterraBloodstainedKnife:                 LocationData("Shrine of UlSterra"),
     LocationName.StageoftheMoonandSun24000L:                        LocationData("Stage of the Moon and Sun"),
 
@@ -677,10 +677,10 @@ OpenSeas_Checks={
     LocationName.SunderingSeaShipwreckoftheEmpressRustyDagger:                  LocationData("Sundering Sea: Shipwreck of the Empress"),
     LocationName.SunderingSeaCuriousNestHerbofSerenity:                         LocationData("Sundering Sea: Curious Nest"),
     LocationName.SunderingSeaCuriousNestLostTribesBow:                          LocationData("Sundering Sea: Curious Nest"),
-    LocationName.SunderingSeaCuriousNestDecayingDragonsEssence1:                 LocationData("Sundering Sea: Curious Nest"),
+    LocationName.SunderingSeaCuriousNestDecayingDragonsEssence1:                LocationData("Sundering Sea: Curious Nest"),
     LocationName.SunderingSeaCuriousNestFangofFerocity:                         LocationData("Sundering Sea: Curious Nest"),
     LocationName.SunderingSeaCuriousNestTornadoGlaive:                          LocationData("Sundering Sea: Curious Nest"),
-    LocationName.SunderingSeaCuriousNestDecayingDragonsEssence2:                 LocationData("Sundering Sea: Curious Nest"),
+    LocationName.SunderingSeaCuriousNestDecayingDragonsEssence2:                LocationData("Sundering Sea: Curious Nest"),
 
 }
 # Not included in the all_chests table
@@ -824,3 +824,31 @@ all_chests = {
     **OpenSeas_Checks,
     **Game_Start
 }
+
+LuaChests = dict()
+
+with open("output.txt","w") as text_file:
+    for k,v in LocationName.chestNameToData.items():
+        if v["Hidden Item"] == False:
+            ChestId = v['ChestID']
+            LocaionName = v['Name']
+            LocationItem = v['Item']
+            APItemName = f"{LocaionName}: {LocationItem}"
+            if APItemName in all_chests.keys():
+                #print(f"[{ChestId}] = {LocaionName}: {LocationItem}")
+                LuaChests[ChestId] =APItemName
+                text_file.write(f"[{ChestId}] = {LocaionName}: {LocationItem}\n")
+            else:
+                if v["Parent"] == "Crestlands" and LocationItem != ItemName.InspiritingPlumM:
+                    #print(f"[{ChestId}] = {LocaionName}: {LocationItem}")
+                    NewApItem = f"Sundering Sea: "+APItemName
+                    if NewApItem in all_chests.keys():
+                        LuaChests[ChestId] = NewApItem
+                        text_file.write(f"[{ChestId}] = {LocaionName}: {LocationItem}\n")
+
+for k,v in all_chests.items():
+    if k not in LuaChests.values():
+        print(k)
+
+
+
