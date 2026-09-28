@@ -236,7 +236,7 @@ class OT2Rules:
         return ((state.has(ItemName.ThroneUnlock, self.player)
                  and state.has(ItemName.ThroneCh3Father, self.player))
                 or (state.has(ItemName.HikariUnlock, self.player)
-                    and state.has(ItemName.HikariCh4, self.player))
+                    and state.has(ItemName.HikariCh2, self.player))
                 or (state.has(ItemName.OsvaldUnlock, self.player)
                     and state.has(ItemName.OsvaldCh4, self.player))
                 or (state.has(ItemName.OsvaldUnlock, self.player)

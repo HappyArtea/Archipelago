@@ -826,30 +826,30 @@ all_chests = {
     **OpenSeas_Checks,
 }
 
-LuaChests = dict()
-
-with open("output.txt","w") as text_file:
-    for k,v in LocationName.chestNameToData.items():
-        if v["Hidden Item"] == False:
-            ChestId = v['ChestID']
-            LocaionName = v['Name']
-            LocationItem = v['Item']
-            APItemName = f"{LocaionName}: {LocationItem}"
-            if APItemName in all_chests.keys():
-                #print(f"[{ChestId}] = {LocaionName}: {LocationItem}")
-                LuaChests[k] = v
-                #text_file.write(f"[{ChestId}] = {LocaionName}: {LocationItem}\n")
-            #else:
-            #    if v["Region"] == "Twn_Isd_2_1_C" and LocationItem != ItemName.InspiritingPlumM:
-            #        #print(f"[{ChestId}] = {LocaionName}: {LocationItem}")
-            #        NewApItem = f"Sundering Sea: "+APItemName
-            #        if NewApItem in all_chests.keys():
-            #            LuaChests[ChestId] = NewApItem
-            #            text_file.write(f"[{ChestId}] = {LocaionName}: {LocationItem}\n")
-#output_dict = dict()
-
-with open("fixedChests.json",'w') as f:
-    json.dump(LuaChests,f,indent = 2)
+#LuaChests = dict()
+#
+#with open("output.txt","w") as text_file:
+#    for k,v in LocationName.chestNameToData.items():
+#        if v["Hidden Item"] == False:
+#            ChestId = v['ChestID']
+#            LocaionName = v['Name']
+#            LocationItem = v['Item']
+#            APItemName = f"{LocaionName}: {LocationItem}"
+#            if APItemName in all_chests.keys():
+#                #print(f"[{ChestId}] = {LocaionName}: {LocationItem}")
+#                LuaChests[k] = v
+#                #text_file.write(f"[{ChestId}] = {LocaionName}: {LocationItem}\n")
+#            #else:
+#            #    if v["Region"] == "Twn_Isd_2_1_C" and LocationItem != ItemName.InspiritingPlumM:
+#            #        #print(f"[{ChestId}] = {LocaionName}: {LocationItem}")
+#            #        NewApItem = f"Sundering Sea: "+APItemName
+#            #        if NewApItem in all_chests.keys():
+#            #            LuaChests[ChestId] = NewApItem
+#            #            text_file.write(f"[{ChestId}] = {LocaionName}: {LocationItem}\n")
+##output_dict = dict()
+#
+#with open("fixedChests.json",'w') as f:
+#    json.dump(LuaChests,f,indent = 2)
 #    for k,v in things.Location_to_Chest.items():
 #        if k in things.ChestData:
 #            print(k)

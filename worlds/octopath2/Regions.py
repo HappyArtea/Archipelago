@@ -1006,7 +1006,6 @@ def create_regions(self):
     multiworld = self.multiworld
     player = self.player
     active_locations = self.location_name_to_id
-
     multiworld.regions += [create_region(multiworld, player, active_locations, region, locations) for region, locations in OT2REGIONS.items()]
     # fill the event locations with events
     for location, item in Locations.event_location_to_item.items():
@@ -1018,64 +1017,73 @@ def connect_regions(self):
     multiworld = self.multiworld
     player = self.player
     # Connections to review, most are coded one-ways
-    OT2RegionConnections: typing.Dict[str, typing.Set[str]] = {
-        "Menu":                             {RegionName.CapeCold, RegionName.Flamechurch, RegionName.NewDelsta, RegionName.BeastingVillage,
-                                             RegionName.Canalbrine, RegionName.Ryu, RegionName.Oresrush, RegionName.Cropdale},
-        RegionName.Winterlands1:            {RegionName.CapeCold, RegionName.Ruffians, RegionName.Winterbloom, RegionName.Crestlands, 
-                                             RegionName.Brightlands, RegionName.TravelersBag},
-        RegionName.Ruffians:                {RegionName.RuffiansBoss},
-        RegionName.CapeCold:                {RegionName.Winterlands1, RegionName.OsvaldCh1},
-        RegionName.Winterbloom:             {RegionName.WinterbloomKO, RegionName.ThroneCh2Father,            
-                                             RegionName.CasttiCh2Winterbloom, RegionName.PartitioWinterbloom},
-        RegionName.Winterlands2:            {RegionName.Stormhail, RegionName.InfernalCastle},
-        RegionName.Stormhail:               {RegionName.StormhailKO, RegionName.OchetteCh2Glacis, 
-                                             RegionName.HikariCh4, RegionName.TemenosCh3Stormhail},
-        RegionName.Crestlands:              {RegionName.Winterlands1, RegionName.Brightlands, RegionName.CrestlandsPass, 
-                                             RegionName.Flamechurch, RegionName.Montwise, RegionName.SpriteCave, RegionName.MerryHills, RegionName.TravelersBag},
-        RegionName.CrestlandsPass:          {RegionName.Winterlands2},
-        RegionName.Flamechurch:             {RegionName.Crestlands, RegionName.FlamechurchKO, RegionName.TemenosThroneCh1, RegionName.TemenosCh1},
-        RegionName.Montwise:                {RegionName.MontwiseKO, RegionName.OsvaldCh4, RegionName.HikariCh2, RegionName.ThroneCh3Father, RegionName.PartitioOsvaldCh2, RegionName.PeculiarTomes, RegionName.ReachesOfHell},
-        RegionName.MerryHills:              {RegionName.AgneaCh5, RegionName.AgneaClear},
-        RegionName.Brightlands:             {RegionName.AbandonedVillage, RegionName.SunkenMaw, RegionName.Waterway, RegionName.Clockbank, 
+    OT2RegionConnections: typing.Dict[str, typing.Tuple[str]] = {
+        #"Menu":                             (),
+        RegionName.Winterlands1:            (RegionName.CapeCold, RegionName.Ruffians, RegionName.Winterbloom, RegionName.Crestlands, 
+                                             RegionName.Brightlands, RegionName.TravelersBag,),
+        RegionName.Ruffians:                (RegionName.RuffiansBoss,),
+        RegionName.CapeCold:                (RegionName.Winterlands1, RegionName.OsvaldCh1,),
+        RegionName.Winterbloom:             (RegionName.WinterbloomKO, RegionName.ThroneCh2Father,            
+                                             RegionName.CasttiCh2Winterbloom, RegionName.PartitioWinterbloom,),
+        RegionName.Winterlands2:            (RegionName.Stormhail, RegionName.InfernalCastle,),
+        RegionName.Stormhail:               (RegionName.StormhailKO, RegionName.OchetteCh2Glacis, 
+                                             RegionName.HikariCh4, RegionName.TemenosCh3Stormhail,),
+        RegionName.Crestlands:              (RegionName.Winterlands1, RegionName.Brightlands, RegionName.CrestlandsPass, 
+                                             RegionName.Flamechurch, RegionName.Montwise, RegionName.SpriteCave, RegionName.MerryHills, RegionName.TravelersBag,),
+        RegionName.CrestlandsPass:          (RegionName.Winterlands2,),
+        RegionName.Flamechurch:             (RegionName.Crestlands, RegionName.FlamechurchKO, RegionName.TemenosThroneCh1, RegionName.TemenosCh1,),
+        RegionName.Montwise:                (RegionName.MontwiseKO, RegionName.OsvaldCh4, RegionName.HikariCh2, RegionName.ThroneCh3Father, RegionName.PartitioOsvaldCh2, RegionName.PeculiarTomes, RegionName.ReachesOfHell,),
+        RegionName.MerryHills:              (RegionName.AgneaCh5, RegionName.AgneaClear,),
+        RegionName.Brightlands:             (RegionName.AbandonedVillage, RegionName.SunkenMaw, RegionName.Waterway, RegionName.Clockbank, 
                                              RegionName.NewDelsta, RegionName.SunderingSea, RegionName.Totohaha, RegionName.Canalbrine, 
-                                             RegionName.Wildlands2, RegionName.TravelersBag, RegionName.Winterlands1, RegionName.Crestlands},
-        RegionName.AbandonedVillage:        {RegionName.CasttiCh3},
-        RegionName.Clockbank:               {RegionName.PartitioCh2, RegionName.Clocktower},
-        RegionName.NewDelsta:               {RegionName.Brightlands, RegionName.AgneaCh2, RegionName.LostseedPass, RegionName.NewDelstaAmbush, RegionName.NewDelstaKO, RegionName.ThroneCh1, RegionName.PartitioOsvaldCh1},
-        RegionName.LostseedPass:            {RegionName.Lostseed},
-        RegionName.Lostseed:                {RegionName.ThroneClear},
-        RegionName.Totohaha:                {RegionName.Brightlands, RegionName.Canalbrine, RegionName.Wildlands2, RegionName.SunderingSea, 
-                                             RegionName.BeastingVillage, RegionName.Tropuhopu, RegionName.TotohahaPass, RegionName.CavernOfWaves, RegionName.TravelersBag},
-        RegionName.BeastingVillage:         {RegionName.Totohaha, RegionName.BeastingVillageKO, RegionName.OchetteCh3, RegionName.OchetteCh1, RegionName.OchetteClear},
-        RegionName.Tropuhopu:               {RegionName.TropuhopuKO, RegionName.TropuhopuKOBoat, RegionName.PartitioTropuhopu, RegionName.AgneaCh3},
-        RegionName.TotohahaPass:            {RegionName.NamelessVillage, RegionName.SinkingRuins},
-        RegionName.NamelessVillage:         {RegionName.NamelessVillageKO, RegionName.TemenosCh4, RegionName.TemenosClear},
-        RegionName.Harborlands:             {RegionName.Canalbrine, RegionName.Hinoeuma1, RegionName.Hinoeuma2, RegionName.SunMoonCave, 
-                                             RegionName.HarborlandsBoat, RegionName.HarborlandsKO, RegionName.ConningCreek, RegionName.TravelersBag},
-        RegionName.Canalbrine:              {RegionName.Harborlands, RegionName.Totohaha, RegionName.Brightlands, RegionName.SunderingSea, 
-                                             RegionName.CanalbrineBoat, RegionName.CanalbrineBoatKO, RegionName.TemenosCh2, RegionName.CasttiCh1},
-        RegionName.ConningCreek:            {RegionName.OsvaldCh3, RegionName.OchetteCh2Acta, RegionName.ThroneTemenosCh2},
-        RegionName.RoqueIsland:             {RegionName.RoqueIslandKO, RegionName.PartitioCh4, RegionName.PartitioClear},
-        RegionName.Hinoeuma1:               {RegionName.Harborlands, RegionName.Wildlands1, RegionName.Ryu, RegionName.TravelersBag},
-        RegionName.Ryu:                     {RegionName.Hinoeuma1, RegionName.HikariCh1, RegionName.AgneaHikariCh1},
-        RegionName.Hinoeuma2:               {RegionName.Harborlands, RegionName.Leaflands, RegionName.Sai, RegionName.Ku},
-        RegionName.Sai:                     {RegionName.SaiKO, RegionName.SaiRuins, RegionName.CasttiCh2Sai, RegionName.PartitioSai, RegionName.AgneaCh4},
-        RegionName.CasttiCh2Sai:            {RegionName.CasttiCh2SaiKO},
-        RegionName.Ku:                      {RegionName.HikariCh5, RegionName.HikariClear, RegionName.AgneaHikariCh2},
-        RegionName.Wildlands1:              {RegionName.Hinoeuma1, RegionName.Leaflands, RegionName.Oresrush, RegionName.TravelersBag},
-        RegionName.Oresrush:                {RegionName.Wildlands1, RegionName.PartitioCh1, RegionName.OresrushKO},
-        RegionName.Wildlands2:              {RegionName.Leaflands, RegionName.Brightlands, RegionName.Totohaha, RegionName.SunderingSea, 
-                                             RegionName.Tunnels, RegionName.Crackridge, RegionName.Gravell},
-        RegionName.Crackridge:              {RegionName.CrackridgeKO, RegionName.TemenosCh3Crackridge, RegionName.OchetteCh2Tera},
-        RegionName.Gravell:                 {RegionName.OsvaldCh5, RegionName.OsvaldClear},
-        RegionName.Leaflands:               {RegionName.Hinoeuma2, RegionName.Wildlands1, RegionName.Wildlands2, RegionName.Spring,
-                                             RegionName.Cropdale, RegionName.LeaflandsBoat, RegionName.Wellgrove, RegionName.Timberain, RegionName.TravelersBag},
-        RegionName.Cropdale:                {RegionName.Leaflands, RegionName.CropdaleBoat, RegionName.AgneaCh1, RegionName.OchetteCasttiCh1, RegionName.OchetteCasttiCh2},
-        RegionName.Wellgrove:               {RegionName.ThroneCh3Mother, RegionName.HikariCh3, RegionName.PartitioCh3, RegionName.ThroneCh2Mother},
-        RegionName.Timberain:               {RegionName.TimberainKO, RegionName.CasttiCh4, RegionName.CasttiClear},
-        RegionName.SunderingSea:            {RegionName.Brightlands, RegionName.Wildlands2, RegionName.Canalbrine, RegionName.Totohaha, RegionName.SeaBehindScourge, RegionName.SeaIslands, RegionName.SeaBehindShark, RegionName.TyranodrakesLair, RegionName.RoqueIsland, RegionName.Vide, RegionName.Galdera}
+                                             RegionName.Wildlands2, RegionName.TravelersBag, RegionName.Winterlands1, RegionName.Crestlands,),
+        RegionName.AbandonedVillage:        (RegionName.CasttiCh3,),
+        RegionName.Clockbank:               (RegionName.PartitioCh2, RegionName.Clocktower,),
+        RegionName.NewDelsta:               (RegionName.Brightlands, RegionName.AgneaCh2, RegionName.LostseedPass, RegionName.NewDelstaAmbush, RegionName.NewDelstaKO, RegionName.ThroneCh1, RegionName.PartitioOsvaldCh1,),
+        RegionName.LostseedPass:            (RegionName.Lostseed,),
+        RegionName.Lostseed:                (RegionName.ThroneClear,),
+        RegionName.Totohaha:                (RegionName.Brightlands, RegionName.Canalbrine, RegionName.Wildlands2, RegionName.SunderingSea, 
+                                             RegionName.BeastingVillage, RegionName.Tropuhopu, RegionName.TotohahaPass, RegionName.CavernOfWaves, RegionName.TravelersBag,),
+        RegionName.BeastingVillage:         (RegionName.Totohaha, RegionName.BeastingVillageKO, RegionName.OchetteCh3, RegionName.OchetteCh1, RegionName.OchetteClear,),
+        RegionName.Tropuhopu:               (RegionName.TropuhopuKO, RegionName.TropuhopuKOBoat, RegionName.PartitioTropuhopu, RegionName.AgneaCh3,),
+        RegionName.TotohahaPass:            (RegionName.NamelessVillage, RegionName.SinkingRuins,),
+        RegionName.NamelessVillage:         (RegionName.NamelessVillageKO, RegionName.TemenosCh4, RegionName.TemenosClear,),
+        RegionName.Harborlands:             (RegionName.Canalbrine, RegionName.Hinoeuma1, RegionName.Hinoeuma2, RegionName.SunMoonCave, 
+                                             RegionName.HarborlandsBoat, RegionName.HarborlandsKO, RegionName.ConningCreek, RegionName.TravelersBag,),
+        RegionName.Canalbrine:              (RegionName.Harborlands, RegionName.Totohaha, RegionName.Brightlands, RegionName.SunderingSea, 
+                                             RegionName.CanalbrineBoat, RegionName.CanalbrineBoatKO, RegionName.TemenosCh2, RegionName.CasttiCh1,),
+        RegionName.ConningCreek:            (RegionName.OsvaldCh3, RegionName.OchetteCh2Acta, RegionName.ThroneTemenosCh2,),
+        RegionName.RoqueIsland:             (RegionName.RoqueIslandKO, RegionName.PartitioCh4, RegionName.PartitioClear,),
+        RegionName.Hinoeuma1:               (RegionName.Harborlands, RegionName.Wildlands1, RegionName.Ryu, RegionName.TravelersBag,),
+        RegionName.Ryu:                     (RegionName.Hinoeuma1, RegionName.HikariCh1, RegionName.AgneaHikariCh1,),
+        RegionName.Hinoeuma2:               (RegionName.Harborlands, RegionName.Leaflands, RegionName.Sai, RegionName.Ku,),
+        RegionName.Sai:                     (RegionName.SaiKO, RegionName.SaiRuins, RegionName.CasttiCh2Sai, RegionName.PartitioSai, RegionName.AgneaCh4,),
+        RegionName.CasttiCh2Sai:            (RegionName.CasttiCh2SaiKO,),
+        RegionName.Ku:                      (RegionName.HikariCh5, RegionName.HikariClear, RegionName.AgneaHikariCh2,),
+        RegionName.Wildlands1:              (RegionName.Hinoeuma1, RegionName.Leaflands, RegionName.Oresrush, RegionName.TravelersBag,),
+        RegionName.Oresrush:                (RegionName.Wildlands1, RegionName.PartitioCh1, RegionName.OresrushKO,),
+        RegionName.Wildlands2:              (RegionName.Leaflands, RegionName.Brightlands, RegionName.Totohaha, RegionName.SunderingSea, 
+                                             RegionName.Tunnels, RegionName.Crackridge, RegionName.Gravell,),
+        RegionName.Crackridge:              (RegionName.CrackridgeKO, RegionName.TemenosCh3Crackridge, RegionName.OchetteCh2Tera,),
+        RegionName.Gravell:                 (RegionName.OsvaldCh5, RegionName.OsvaldClear,),
+        RegionName.Leaflands:               (RegionName.Hinoeuma2, RegionName.Wildlands1, RegionName.Wildlands2, RegionName.Spring,
+                                             RegionName.Cropdale, RegionName.LeaflandsBoat, RegionName.Wellgrove, RegionName.Timberain, RegionName.TravelersBag,),
+        RegionName.Cropdale:                (RegionName.Leaflands, RegionName.CropdaleBoat, RegionName.AgneaCh1, RegionName.OchetteCasttiCh1, RegionName.OchetteCasttiCh2,),
+        RegionName.Wellgrove:               (RegionName.ThroneCh3Mother, RegionName.HikariCh3, RegionName.PartitioCh3, RegionName.ThroneCh2Mother,),
+        RegionName.Timberain:               (RegionName.TimberainKO, RegionName.CasttiCh4, RegionName.CasttiClear,),
+        RegionName.SunderingSea:            (RegionName.Brightlands, RegionName.Wildlands2, RegionName.Canalbrine, RegionName.Totohaha, RegionName.SeaBehindScourge, RegionName.SeaIslands, RegionName.SeaBehindShark, RegionName.TyranodrakesLair, RegionName.RoqueIsland, RegionName.Vide, RegionName.Galdera)
     }
-
+    starting_character_to_city = {
+        1:RegionName.CapeCold,          #osvald
+        2:RegionName.Canalbrine,        #castti
+        3:RegionName.Flamechurch,       #temenos
+        4:RegionName.BeastingVillage,   #ochette
+        5:RegionName.Oresrush,          #paritio
+        6:RegionName.Cropdale,          #agnea
+        7:RegionName.NewDelsta,         #throne
+        8:RegionName.Ryu                #hikari
+    }
+    OT2RegionConnections["Menu"] = tuple([starting_character_to_city[self.options.StartingCharacter]])
     for source, target in OT2RegionConnections.items():
         source_region = multiworld.get_region(source, player)
         source_region.add_exits(target)
