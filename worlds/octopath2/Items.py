@@ -1601,7 +1601,7 @@ Story_Chapter_Unlocks_Table = {
 
 # Do those need a section really? Dunno where to put them
 Other_Items_Table = {
-    ItemName.Boat:                                  ItemData(1,ItemType.progression),  # Does this refer to Ferries? No, it's the little boat that lets you move in rivers.
+    ItemName.Canoe:                                  ItemData(1,ItemType.progression),
     ItemName.TimeChange:                            ItemData(1,ItemType.progression),
     ItemName.TheGrandTerry:                         ItemData(1,ItemType.progression),
 }

@@ -226,6 +226,7 @@ class OT2Rules:
                     and state.has(ItemName.TemenosCh3Stormhail,self.player)))
 
     def flamechurch_unlock(self, state: CollectionState) -> bool:
+        #Temenos+Ch1 or Throne-Temenos Joint ch1
         return ((state.has(ItemName.TemenosUnlock, self.player)
                  and state.has(ItemName.TemenosCh1, self.player))
                 or (state.has(ItemName.TemenosUnlock, self.player)
@@ -233,6 +234,7 @@ class OT2Rules:
                     and state.has(ItemName.TemenosThroneCh1, self.player)))
 
     def montwise_unlock(self, state: CollectionState) -> bool:
+        #Throne+ch3 father or Hikari+Ch2 or Osvald+ch4 or Osvald-Partitio joint ch2
         return ((state.has(ItemName.ThroneUnlock, self.player)
                  and state.has(ItemName.ThroneCh3Father, self.player))
                 or (state.has(ItemName.HikariUnlock, self.player)
@@ -244,10 +246,12 @@ class OT2Rules:
                     and state.has(ItemName.OsvaldPartitioCh2, self.player)))
 
     def merryhills_unlock(self, state: CollectionState) -> bool:
+        #Agnea+ch5
         return (state.has(ItemName.AgneaUnlock, self.player)
                 and state.has(ItemName.AgneaCh5, self.player))
 
     def newdelsta_unlock(self, state: CollectionState) -> bool:
+        #throne+ch1 or Throne+ch4 or Agnea+ch2 or Osvald-Partitio joint ch1
         return ((state.has(ItemName.ThroneUnlock, self.player)
                  and state.has(ItemName.ThroneCh1, self.player))
                 or (state.has(ItemName.ThroneUnlock, self.player)
@@ -259,37 +263,45 @@ class OT2Rules:
                     and state.has(ItemName.OsvaldPartitioCh1, self.player)))
 
     def abandonedvillage_unlock(self, state: CollectionState) -> bool:
+        #castti+ch3
         return (state.has(ItemName.CasttiUnlock, self.player)
                 and state.has(ItemName.CasttiCh3, self.player))
 
     def clockbank_unlock(self, state: CollectionState) -> bool:
+        #partitio+ch2
         return (state.has(ItemName.PartitioUnlock, self.player)
                 and state.has(ItemName.PartitioCh2, self.player))
 
     def lostseed_unlock(self, state: CollectionState) -> bool:
+        #throne+ch4
         return (state.has(ItemName.ThroneUnlock, self.player)
                 and state.has(ItemName.ThroneCh4, self.player))
 
     def beasting_unlock(self, state: CollectionState) -> bool:
+        #Ochette+ch1 or Ochette+ch3
         return state.has(ItemName.OchetteUnlock, self.player) and (state.has(ItemName.OchetteCh1, self.player) or state.has(ItemName.OchetteCh3, self.player))
 
     def tropuhopu_unlock(self, state: CollectionState) -> bool:
+        #agnea+ch3 or Partitio Scent of commerce Grand terry
         return ((state.has(ItemName.AgneaUnlock, self.player)
                  and state.has(ItemName.AgneaCh3, self.player))
                 or (state.has(ItemName.PartitioUnlock, self.player)
                     and state.has(ItemName.PartitioTotohaha,self.player)))
 
     def nameless_unlock(self, state: CollectionState) -> bool:
+        #temenos+ch4
         return (state.has(ItemName.TemenosUnlock, self.player)
                 and state.has(ItemName.TemenosCh4, self.player))
 
     def canalbrine_unlock(self, state: CollectionState) -> bool:
+        #castti+ch1 or Temenos+ch2
         return ((state.has(ItemName.CasttiUnlock, self.player)
                  and state.has(ItemName.CasttiCh1, self.player))
                 or (state.has(ItemName.TemenosUnlock, self.player)
                     and state.has(ItemName.TemenosCh2,self.player)))
 
     def conningcreek_unlock(self, state: CollectionState) -> bool:
+        #Ochette+ch2Acta or Osvald+ch3 or Throne-temenos joint ch2
         return ((state.has(ItemName.OchetteUnlock, self.player)
                 and state.has(ItemName.OchetteCh2Acta,self.player))
                 or (state.has(ItemName.OsvaldUnlock, self.player)
@@ -299,14 +311,17 @@ class OT2Rules:
                     and state.has(ItemName.TemenosThroneCh2, self.player)))
 
     def roqueisland_unlock(self, state: CollectionState) -> bool:
+        #Partitio+ch4
         return (state.has(ItemName.PartitioUnlock, self.player)
                 and state.has(ItemName.PartitioCh4, self.player))
 
     def ryu_unlock(self, state: CollectionState) -> bool:
+        #hikari+ch1 or hikari-agnea joint ch1
         return state.has(ItemName.HikariUnlock, self.player) and (state.has(ItemName.HikariCh1, self.player)
                 or (state.has(ItemName.AgneaUnlock,self.player) and state.has(ItemName.HikariAgneaCh1, self.player)))
 
     def sai_unlock(self, state: CollectionState) -> bool:
+        #castti+ch2sai or agnea+ch4 or partitio+scent of commerce archives
         return ((state.has(ItemName.CasttiUnlock, self.player)
                  and state.has(ItemName.CasttiCh2Sai, self.player))
                 or (state.has(ItemName.AgneaUnlock, self.player)
@@ -315,10 +330,12 @@ class OT2Rules:
                     and state.has(ItemName.PartitioSai,self.player)))
 
     def ku_unlock(self, state: CollectionState) -> bool:
+        #Hikari+ch5 or Hikari-agnea joint ch2
         return state.has(ItemName.HikariUnlock, self.player) and (state.has(ItemName.HikariCh5, self.player)
                 or (state.has(ItemName.AgneaUnlock,self.player) and state.has(ItemName.HikariAgneaCh2, self.player)))
 
     def cropdale_unlock(self, state: CollectionState) -> bool:
+        #agnea+ch1 or castti-ochette joint ch1 or ch2
         return ((state.has(ItemName.AgneaUnlock, self.player)
                  and state.has(ItemName.AgneaCh1, self.player))
                 or (state.has(ItemName.CasttiUnlock, self.player)
@@ -327,6 +344,7 @@ class OT2Rules:
                          or state.has(ItemName.CasttiOchetteCh2, self.player))))
 
     def wellgrove_unlock(self, state: CollectionState) -> bool:
+        #throne+ch3mother or hikari+ch3 or Partitio+ch3
         return ((state.has(ItemName.ThroneUnlock, self.player)
                 and state.has(ItemName.ThroneCh3Mother,self.player))
                 or (state.has(ItemName.HikariUnlock, self.player)
@@ -335,22 +353,26 @@ class OT2Rules:
                     and state.has(ItemName.PartitioCh3,self.player)))
 
     def timberain_unlock(self, state: CollectionState) -> bool:
+        #castti+ch4
         return (state.has(ItemName.CasttiUnlock, self.player)
                 and state.has(ItemName.CasttiCh4, self.player))
 
     def oresrush_unlock(self, state: CollectionState) -> bool:
+        #Partitio+ch1 or throne+ch2mother
         return ((state.has(ItemName.PartitioUnlock, self.player)
                  and state.has(ItemName.PartitioCh1, self.player))
                 or (state.has(ItemName.ThroneUnlock, self.player)
                     and state.has(ItemName.ThroneCh2Mother, self.player)))
 
     def crackridge_unlock(self, state: CollectionState) -> bool:
+        #Temenos+ch3Crackridge or Ochette+ch2Tera
         return ((state.has(ItemName.TemenosUnlock, self.player)
                  and state.has(ItemName.TemenosCh3Crackridge,self.player))
                 or (state.has(ItemName.OchetteUnlock, self.player)
                     and state.has(ItemName.OchetteCh2Tera, self.player)))
 
     def gravell_unlock(self, state: CollectionState) -> bool:
+        #Osvald+ch5
         return (state.has(ItemName.OsvaldUnlock, self.player)
                 and state.has(ItemName.OsvaldCh5, self.player))
 
@@ -403,7 +425,7 @@ class OT2Rules:
     def can_access_nameless(self, state: CollectionState) -> bool:
         return (self.nameless_unlock(state)
                 and self.can_access_totohaha(state)
-                and state.has(ItemName.Boat, self.player))
+                and state.has(ItemName.Canoe, self.player))
 
     def can_access_canalbrine(self, state: CollectionState) -> bool:
         return (self.canalbrine_unlock(state))
@@ -453,7 +475,7 @@ class OT2Rules:
     def can_clear_osvaldch1(self, state: CollectionState) -> bool:
         return (state.has(ItemName.OsvaldUnlock, self.player)
                 and state.has(ItemName.OsvaldCh1, self.player)
-                and state.has(ItemName.Boat, self.player)
+                and state.has(ItemName.Canoe, self.player)
                 and self.can_access_capecold(state) and self.can_mug(state)
                 and self.can_scrutinize(state))
 
@@ -481,7 +503,7 @@ class OT2Rules:
     def can_clear_temenosch1(self, state: CollectionState) -> bool:
         return (state.has(ItemName.TemenosUnlock, self.player)
                 and state.has(ItemName.TemenosCh1, self.player)
-                and state.has(ItemName.Boat, self.player)
+                and state.has(ItemName.Canoe, self.player)
                 and self.can_access_flamechurch(state)
                 and self.can_guide(state)
                 and self.can_coerce(state))
@@ -570,7 +592,7 @@ class OT2Rules:
                 and state.has(ItemName.OchetteCh2Acta,self.player)
                 and self.can_access_conningcreek(state)
                 and self.can_provoke(state)
-                and state.has(ItemName.Boat, self.player)
+                and state.has(ItemName.Canoe, self.player)
                 and self.get_lvl1plus_rules(state))
 
     def can_clear_ochettech2tera(self, state: CollectionState) -> bool:
@@ -597,7 +619,7 @@ class OT2Rules:
     def can_clear_casttich1(self, state: CollectionState) -> bool:
         return (state.has(ItemName.CasttiUnlock, self.player)
                 and state.has(ItemName.CasttiCh1, self.player)
-                and state.has(ItemName.Boat, self.player)
+                and state.has(ItemName.Canoe, self.player)
                 and self.can_access_canalbrine(state)
                 and self.can_inquire(state)
                 and self.can_soothe(state))
@@ -844,7 +866,7 @@ class OT2Rules:
                 and state.has(ItemName.HikariAgneaCh1, self.player)
                 and self.can_access_ryu(state)
                 and self.can_bribe(state)
-            and self.can_entreat(state))
+                and self.can_entreat(state))
 
     def can_clear_hikariagneach2(self, state: CollectionState) -> bool:
         return (state.has(ItemName.HikariUnlock, self.player)
@@ -894,8 +916,8 @@ class OT2WorldRules(OT2Rules):
         self.region_rules = {
             # Winterlands regions
             RegionName.Winterlands1: lambda state: self.can_access_winterlands1(state),
-            RegionName.Ruffians: lambda state: (self.can_access_winterlands1(state) and (state.has(ItemName.Boat, self.player) or self.can_KO(state))),
-            RegionName.RuffiansBoss: lambda state: (self.can_access_winterlands1(state) and state.has(ItemName.Boat, self.player)),
+            RegionName.Ruffians: lambda state: (self.can_access_winterlands1(state) and (state.has(ItemName.Canoe, self.player) or self.can_KO(state))),
+            RegionName.RuffiansBoss: lambda state: (self.can_access_winterlands1(state) and state.has(ItemName.Canoe, self.player)),
             RegionName.CapeCold: lambda state: self.can_access_capecold(state),
             RegionName.OsvaldCh1: lambda state: self.can_clear_osvaldch1(state),
             RegionName.Winterbloom: lambda state: self.can_access_winterbloom(state),
@@ -914,7 +936,7 @@ class OT2WorldRules(OT2Rules):
             # Crestlands regions
             RegionName.Crestlands: lambda state: self.can_access_crestlands(state),
             RegionName.CrestlandsPass: lambda state: (self.can_access_crestlands(state) and self.can_KO(state)),
-            RegionName.SpriteCave: lambda state: (self.can_access_crestlands(state) and state.has(ItemName.Boat, self.player)),
+            RegionName.SpriteCave: lambda state: (self.can_access_crestlands(state) and state.has(ItemName.Canoe, self.player)),
             RegionName.Flamechurch: lambda state: self.can_access_flamechurch(state),
             RegionName.FlamechurchKO: lambda state: (self.can_access_flamechurch(state) and self.can_KO(state)),
             RegionName.TemenosCh1: lambda state: self.can_clear_temenosch1(state),
@@ -930,7 +952,7 @@ class OT2WorldRules(OT2Rules):
             #Brightlands regions
             RegionName.Brightlands: lambda state: self.can_access_brightlands(state),
             RegionName.Waterway: lambda state: self.can_access_brightlands(state),
-            RegionName.SunkenMaw: lambda state: (self.can_access_brightlands(state) and state.has(ItemName.Boat, self.player)),
+            RegionName.SunkenMaw: lambda state: (self.can_access_brightlands(state) and state.has(ItemName.Canoe, self.player)),
             RegionName.AbandonedVillage: lambda state: self.can_access_abandonedvillage(state),
             RegionName.NewDelsta: lambda state: self.can_access_newdelsta(state),
             RegionName.NewDelstaAmbush: lambda state: (self.can_access_newdelsta(state) and self.can_ambush(state)),
@@ -938,7 +960,7 @@ class OT2WorldRules(OT2Rules):
             RegionName.AgneaCh2: lambda state: self.can_clear_agneach2(state),
             RegionName.Clockbank: lambda state: self.can_access_clockbank(state),
             RegionName.PartitioCh2: lambda state: self.can_clear_partitioch2(state),
-            RegionName.Clocktower: lambda state: (self.can_access_clockbank(state) and state.has(ItemName.Boat, self.player)),
+            RegionName.Clocktower: lambda state: (self.can_access_clockbank(state) and state.has(ItemName.Canoe, self.player)),
             RegionName.LostseedPass: lambda state: self.can_access_lostseed(state),
             RegionName.Lostseed: lambda state: self.can_access_lostseed(state),
             RegionName.ThroneCh1: lambda state: self.can_clear_thronech1(state),
@@ -952,10 +974,10 @@ class OT2WorldRules(OT2Rules):
             RegionName.OchetteCh3: lambda state: self.can_clear_ochettech3(state),
             RegionName.Tropuhopu: lambda state: self.can_access_tropuhopu(state),
             RegionName.TropuhopuKO: lambda state: (self.can_access_tropuhopu(state) and self.can_KO(state)),
-            RegionName.TropuhopuKOBoat: lambda state: (self.can_access_winterlands1(state) and self.can_KO(state) and state.has(ItemName.Boat, self.player)),
-            RegionName.CavernOfWaves: lambda state: (self.can_access_totohaha(state) and state.has(ItemName.Boat, self.player)),
-            RegionName.TotohahaPass: lambda state: (self.can_access_totohaha(state) and state.has(ItemName.Boat, self.player)),
-            RegionName.SinkingRuins: lambda state: (self.can_access_totohaha(state) and state.has(ItemName.Boat, self.player)),
+            RegionName.TropuhopuKOCanoe: lambda state: (self.can_access_winterlands1(state) and self.can_KO(state) and state.has(ItemName.Canoe, self.player)),
+            RegionName.CavernOfWaves: lambda state: (self.can_access_totohaha(state) and state.has(ItemName.Canoe, self.player)),
+            RegionName.TotohahaPass: lambda state: (self.can_access_totohaha(state) and state.has(ItemName.Canoe, self.player)),
+            RegionName.SinkingRuins: lambda state: (self.can_access_totohaha(state) and state.has(ItemName.Canoe, self.player)),
             RegionName.NamelessVillage: lambda state: self.can_access_nameless(state),
             RegionName.NamelessVillageKO: lambda state: (self.can_access_nameless(state) and self.can_KO(state)),
             RegionName.TemenosCh4: lambda state: self.can_clear_temenosch4(state),
@@ -967,12 +989,12 @@ class OT2WorldRules(OT2Rules):
             
             #Harborlands
             RegionName.Harborlands: lambda state: self.can_access_harborlands(state),
-            RegionName.HarborlandsBoat: lambda state: (self.can_access_harborlands(state) and state.has(ItemName.Boat, self.player)),
+            RegionName.HarborlandsCanoe: lambda state: (self.can_access_harborlands(state) and state.has(ItemName.Canoe, self.player)),
             RegionName.HarborlandsKO: lambda state: (self.can_access_totohaha(state) and self.can_KO(state)),
             RegionName.SunMoonCave: lambda state: (self.can_access_harborlands(state) and self.can_be_daytime(state) and self.can_be_nighttime(state)),
             RegionName.Canalbrine: lambda state: self.can_access_canalbrine(state),
-            RegionName.CanalbrineBoat: lambda state: (self.can_access_canalbrine(state) and state.has(ItemName.Boat, self.player)),            
-            RegionName.CanalbrineBoatKO: lambda state: (self.can_access_totohaha(state) and state.has(ItemName.Boat, self.player) and self.can_KO(state)),
+            RegionName.CanalbrineCanoe: lambda state: (self.can_access_canalbrine(state) and state.has(ItemName.Canoe, self.player)),            
+            RegionName.CanalbrineCanoeKO: lambda state: (self.can_access_totohaha(state) and state.has(ItemName.Canoe, self.player) and self.can_KO(state)),
             RegionName.TemenosCh2: lambda state: self.can_clear_temenosch2(state),
             RegionName.ConningCreek: lambda state: self.can_access_conningcreek(state),
             RegionName.OsvaldCh3: lambda state: self.can_clear_osvaldch3(state),
@@ -1001,10 +1023,10 @@ class OT2WorldRules(OT2Rules):
             
             # Leaflands regions
             RegionName.Leaflands: lambda state: self.can_access_leaflands(state),
-            RegionName.LeaflandsBoat: lambda state: (self.can_access_leaflands(state) and state.has(ItemName.Boat, self.player)),
-            RegionName.Spring: lambda state: (self.can_access_leaflands(state) and state.has(ItemName.Boat, self.player)),
+            RegionName.LeaflandsCanoe: lambda state: (self.can_access_leaflands(state) and state.has(ItemName.Canoe, self.player)),
+            RegionName.Spring: lambda state: (self.can_access_leaflands(state) and state.has(ItemName.Canoe, self.player)),
             RegionName.Cropdale: lambda state: self.can_access_cropdale(state),
-            RegionName.CropdaleBoat: lambda state: (self.can_access_cropdale(state) and state.has(ItemName.Boat, self.player)),
+            RegionName.CropdaleCanoe: lambda state: (self.can_access_cropdale(state) and state.has(ItemName.Canoe, self.player)),
             RegionName.Wellgrove: lambda state: self.can_access_wellgrove(state),
             RegionName.ThroneCh3Mother: lambda state: self.can_clear_thronech3mother(state),
             RegionName.Timberain: lambda state: self.can_access_timberain(state),
@@ -1037,7 +1059,7 @@ class OT2WorldRules(OT2Rules):
             RegionName.SeaBehindScourge: lambda state: self.can_access_sea(state) and self.get_lvl20plus_rules(state),
             RegionName.SeaIslands: lambda state: self.can_access_sea(state),
             RegionName.SeaBehindShark: lambda state: self.can_access_sea(state) and self.get_lvl20plus_rules(state),
-            RegionName.TyranodrakesLair: lambda state: (self.can_access_sea(state) and state.has(ItemName.Boat, self.player) and self.get_lvl40plus_rules(state)),
+            RegionName.TyranodrakesLair: lambda state: (self.can_access_sea(state) and state.has(ItemName.Canoe, self.player) and self.get_lvl40plus_rules(state)),
             
             #Side-Stories
             RegionName.ThroneTemenosCh2: lambda state: self.can_clear_temenosthronech2(state),
@@ -1052,7 +1074,7 @@ class OT2WorldRules(OT2Rules):
             RegionName.Vide: lambda state: sum(1 for item_name in ChapterGoalsList if state.has(item_name, self.player)) >= self.world.options.RequiredChapters.value,
             RegionName.TravelersBag: lambda state: (self.can_be_nighttime(state)),
             RegionName.PeculiarTomes: lambda state: (self.can_get_npcitems(state) and state.can_reach(RegionName.Crackridge, player=self.player) and state.can_reach(RegionName.BeastingVillage, player=self.player) and state.can_reach(RegionName.Winterlands2, player=self.player)),
-            RegionName.ReachesOfHell: lambda state: (state.can_reach(RegionName.PeculiarTomes, player=self.player) and self.can_get_info(state) and state.can_reach(RegionName.SunderingSea, player=self.player) and state.has(ItemName.Boat, self.player)),
+            RegionName.ReachesOfHell: lambda state: (state.can_reach(RegionName.PeculiarTomes, player=self.player) and self.can_get_info(state) and state.can_reach(RegionName.SunderingSea, player=self.player) and state.has(ItemName.Canoe, self.player)),
             RegionName.Galdera: lambda state: (state.can_reach(RegionName.SunderingSea, player=self.player) and state.can_reach(RegionName.TravelersBag, player=self.player) and state.can_reach(RegionName.PeculiarTomes, player=self.player) and state.can_reach(RegionName.ReachesOfHell, player=self.player) and self.get_finalboss_rules(state)),
             
         }

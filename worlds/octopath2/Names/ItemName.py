@@ -1482,7 +1482,7 @@ CasttiOchetteCh1 = "Castti and Ochette Chapter 1 Unlock"
 CasttiOchetteCh2 = "Castti and Ochette Chapter 2 Unlock"
 OsvaldPartitioCh1 = "Osvald and Partitio Chapter 1 Unlock"
 OsvaldPartitioCh2 = "Osvald and Partitio Chapter 2 Unlock"
-Boat = "Boat"
+Canoe = "Canoe"
 TimeChange = "Time Change Unlock"
 
 #Events
